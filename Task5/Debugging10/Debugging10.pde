@@ -1,4 +1,4 @@
-boolean jobsDone = true;
+boolean jobsDone = false;
 
 void setup()
 {
@@ -27,15 +27,13 @@ void drawGrid(int numberOfHorizontalCells, int numberOfVerticalCells, int cellSi
     for (int y = 0; y < numberOfVerticalCells; y++)
     {
 
-      if (x % 2 == 0 || y % 2==0)
-      {
-
-        fill(0);
-      } else if (y % 2==1 || x % 2 == 1 ) {
+      if (y % 2==1 && x % 2 == 1 ) {
 
         fill(255);
       }
       rect(x * cellSideLength, y * cellSideLength, cellSideLength, cellSideLength);
     }
   }
+
+  jobsDone = true;
 }
